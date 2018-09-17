@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   let batches = sequelize.define(
     "batches",
     {
@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
       },
       image: {
         type: DataTypes.STRING(20)
-      } 
+      }
     },
     {
       timestamps: false,
@@ -26,12 +26,12 @@ module.exports = function (sequelize, DataTypes) {
     }
   );
 
-  batches.associate = function (models) {
+  batches.associate = function(models) {
     models.batches.hasMany(models.students, {
-      foreignKey: 'id_batch',
+      foreignKey: "id_batch",
       as: "students"
     });
   };
 
-  return batches
+  return batches;
 };

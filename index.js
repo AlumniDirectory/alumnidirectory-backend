@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use("/assets", express.static("assets"));
 
+app.use("/assets", express.static("assets"));
 app.use("/", index);
 app.use("/batches", batches);
 app.use("/partners", partners);
